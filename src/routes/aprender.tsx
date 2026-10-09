@@ -49,7 +49,7 @@ function Aprender() {
           <h2 className="mt-6 text-2xl font-semibold">{q.question}</h2>
           <div className="mt-6 grid gap-3" role="radiogroup" aria-label="Opciones">
             {q.options.map((o, i) => {
-              const state = chosen === undefined ? "" : i === q.answer ? "border-success bg-success/10" : i === chosen ? "border-destructive bg-destructive/10" : "opacity-60";
+              const state = chosen === undefined ? "" : i === q.answer ? "border-success bg-success text-primary-foreground" : i === chosen ? "border-destructive bg-destructive text-primary-foreground" : "opacity-60";
               return <button key={o} role="radio" aria-checked={chosen === i} disabled={chosen !== undefined} onClick={() => setAnswers({ ...answers, [q.id]: i })} className={`rounded-xl border px-5 py-4 text-left transition-colors hover:border-accent disabled:cursor-default ${state}`}>{o}</button>;
             })}
           </div>
