@@ -4,7 +4,7 @@ import { timeline, zones } from "@/data/learning";
 import { articleBySlug } from "@/data/articles";
 
 export const Route = createFileRoute("/explorar")({
-  validateSearch: (s: Record<string, unknown>) => ({ zona: typeof s.zona === "string" ? s.zona : undefined }),
+  validateSearch: (s: Record<string, unknown>) => ({ zona: typeof s["zona"] === "string" ? s["zona"] : undefined }),
   head: () => ({
     meta: [
       { title: "Explorar Chile — Zonas y cronología | Chile 360" },
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/explorar")({
 function Explorar() {
   const { zona } = Route.useSearch();
   const navigate = Route.useNavigate();
-  const current = zones.find((z) => z.id === zona) ?? zones[0];
+  const current = zones.find((z) => z.id === zona) ?? zones[0]!;
   const [openEvent, setOpenEvent] = useState<string | null>(null);
   const periods = [...new Set(timeline.map((e) => e.period))];
   const [period, setPeriod] = useState<string>("Todos");

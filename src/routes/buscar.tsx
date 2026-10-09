@@ -4,7 +4,7 @@ import { categories } from "@/data/categories";
 import { ArticleCard } from "@/components/ArticleCard";
 
 export const Route = createFileRoute("/buscar")({
-  validateSearch: (s: Record<string, unknown>) => ({ q: typeof s.q === "string" ? s.q : "", cat: typeof s.cat === "string" ? s.cat : "" }),
+  validateSearch: (s: Record<string, unknown>) => ({ q: typeof s["q"] === "string" ? s["q"] : "", cat: typeof s["cat"] === "string" ? s["cat"] : "" }),
   head: () => ({ meta: [
     { title: "Buscar | Chile 360" },
     { name: "description", content: "Buscá artículos sobre Chile por tema, lugar, personaje o etiqueta." },
