@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AprenderRouteImport } from './routes/aprender'
+import { Route as BuscarRouteImport } from './routes/buscar'
+import { Route as DatosRouteImport } from './routes/datos'
+import { Route as EnciclopediaRouteImport } from './routes/enciclopedia'
+import { Route as ExplorarRouteImport } from './routes/explorar'
+import { Route as GuardadosRouteImport } from './routes/guardados'
+import { Route as ArticuloSlugRouteImport } from './routes/articulo.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AprenderRoute = AprenderRouteImport.update({
+  id: '/aprender',
+  path: '/aprender',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuscarRoute = BuscarRouteImport.update({
+  id: '/buscar',
+  path: '/buscar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DatosRoute = DatosRouteImport.update({
+  id: '/datos',
+  path: '/datos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnciclopediaRoute = EnciclopediaRouteImport.update({
+  id: '/enciclopedia',
+  path: '/enciclopedia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExplorarRoute = ExplorarRouteImport.update({
+  id: '/explorar',
+  path: '/explorar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuardadosRoute = GuardadosRouteImport.update({
+  id: '/guardados',
+  path: '/guardados',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArticuloSlugRoute = ArticuloSlugRouteImport.update({
+  id: '/articulo/$slug',
+  path: '/articulo/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aprender': typeof AprenderRoute
+  '/buscar': typeof BuscarRoute
+  '/datos': typeof DatosRoute
+  '/enciclopedia': typeof EnciclopediaRoute
+  '/explorar': typeof ExplorarRoute
+  '/guardados': typeof GuardadosRoute
+  '/articulo/$slug': typeof ArticuloSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aprender': typeof AprenderRoute
+  '/buscar': typeof BuscarRoute
+  '/datos': typeof DatosRoute
+  '/enciclopedia': typeof EnciclopediaRoute
+  '/explorar': typeof ExplorarRoute
+  '/guardados': typeof GuardadosRoute
+  '/articulo/$slug': typeof ArticuloSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aprender': typeof AprenderRoute
+  '/buscar': typeof BuscarRoute
+  '/datos': typeof DatosRoute
+  '/enciclopedia': typeof EnciclopediaRoute
+  '/explorar': typeof ExplorarRoute
+  '/guardados': typeof GuardadosRoute
+  '/articulo/$slug': typeof ArticuloSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/aprender'
+    | '/buscar'
+    | '/datos'
+    | '/enciclopedia'
+    | '/explorar'
+    | '/guardados'
+    | '/articulo/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/aprender'
+    | '/buscar'
+    | '/datos'
+    | '/enciclopedia'
+    | '/explorar'
+    | '/guardados'
+    | '/articulo/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/aprender'
+    | '/buscar'
+    | '/datos'
+    | '/enciclopedia'
+    | '/explorar'
+    | '/guardados'
+    | '/articulo/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AprenderRoute: typeof AprenderRoute
+  BuscarRoute: typeof BuscarRoute
+  DatosRoute: typeof DatosRoute
+  EnciclopediaRoute: typeof EnciclopediaRoute
+  ExplorarRoute: typeof ExplorarRoute
+  GuardadosRoute: typeof GuardadosRoute
+  ArticuloSlugRoute: typeof ArticuloSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/aprender': {
+      id: '/aprender'
+      path: '/aprender'
+      fullPath: '/aprender'
+      preLoaderRoute: typeof AprenderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/buscar': {
+      id: '/buscar'
+      path: '/buscar'
+      fullPath: '/buscar'
+      preLoaderRoute: typeof BuscarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/datos': {
+      id: '/datos'
+      path: '/datos'
+      fullPath: '/datos'
+      preLoaderRoute: typeof DatosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/enciclopedia': {
+      id: '/enciclopedia'
+      path: '/enciclopedia'
+      fullPath: '/enciclopedia'
+      preLoaderRoute: typeof EnciclopediaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/explorar': {
+      id: '/explorar'
+      path: '/explorar'
+      fullPath: '/explorar'
+      preLoaderRoute: typeof ExplorarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guardados': {
+      id: '/guardados'
+      path: '/guardados'
+      fullPath: '/guardados'
+      preLoaderRoute: typeof GuardadosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/articulo/$slug': {
+      id: '/articulo/$slug'
+      path: '/articulo/$slug'
+      fullPath: '/articulo/$slug'
+      preLoaderRoute: typeof ArticuloSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AprenderRoute: AprenderRoute,
+  BuscarRoute: BuscarRoute,
+  DatosRoute: DatosRoute,
+  EnciclopediaRoute: EnciclopediaRoute,
+  ExplorarRoute: ExplorarRoute,
+  GuardadosRoute: GuardadosRoute,
+  ArticuloSlugRoute: ArticuloSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
