@@ -4,7 +4,7 @@ import { timeline, zones } from "@/data/learning";
 import { articleBySlug } from "@/data/articles";
 
 export const Route = createFileRoute("/explorar")({
-  validateSearch: (s: Record<string, unknown>): { zona?: string } => ({ zona: typeof s["zona"] === "string" ? s["zona"] : undefined }),
+  validateSearch: (s: Record<string, unknown>): { zona?: string | undefined } => ({ zona: typeof s["zona"] === "string" ? s["zona"] : undefined }),
   head: () => ({
     meta: [
       { title: "Explorar Chile — Zonas y cronología | Chile 360" },
