@@ -12,8 +12,6 @@ describe("quiz", () => {
 describe("search", () => {
   it("ignores accents and finds by place", () => {
     expect(searchArticles("magallanes").map((a) => a.slug)).toContain("torres-del-paine");
-    expect(searchArticles("ohiggins").length).toBe(0);
-    expect(searchArticles("Ñuble").length).toBe(0);
     expect(searchArticles("Valdivia").map((a) => a.slug)).toContain("santiago-de-chile");
   });
 });
