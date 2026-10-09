@@ -21,7 +21,11 @@ function Home() {
   return (
     <>
       <section className="relative -mt-16 flex min-h-[92vh] items-end overflow-hidden">
-        <img src={images.paine} alt="Cuernos del Paine reflejados en un lago al amanecer" className="absolute inset-0 h-full w-full object-cover" fetchPriority="high" />
+        <img src={chile1}
+  alt="Cuernos del Paine reflejados en un lago al amanecer"
+  className="absolute inset-0 h-full w-full object-cover"
+  fetchPriority="high"
+/>
         <div className="hero-overlay absolute inset-0" />
         <div className="container-site relative pb-20 pt-40 text-petrol-foreground">
           <p className="eyebrow fade-up">Enciclopedia interactiva</p>
@@ -77,7 +81,7 @@ function Home() {
       <section className="container-site">
         <div className="grid gap-4 rounded-3xl border bg-card p-8 sm:grid-cols-2 lg:grid-cols-4">
           {indicators.map((i) => (
-            <div key={i.label}><p className="text-sm text-muted-foreground">{i.label}</p><p className="mt-1 font-display text-4xl">{i.value}</p><p className="text-xs text-muted-foreground">{i.unit} · {i.source}</p></div>
+            <div key={i.label}><p className="text-sm text-muted-foreground">{i.label}</p><p className="mt-1 font-display text-4xl">{i.value}</p><p className="text-xs text-muted-foreground">{i.unit}</p></div>
           ))}
         </div>
         <Link to="/datos" className="mt-4 inline-block text-sm font-semibold text-terra">Explorar Chile en datos →</Link>
