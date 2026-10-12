@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, HelpCircle } from "lucide-react";
+import chile1 from "@/assets/chile1.png";
 import { articles, images } from "@/data/articles";
 import { curiosities, indicators, timeline, zones } from "@/data/learning";
 import { ArticleCard } from "@/components/ArticleCard";
